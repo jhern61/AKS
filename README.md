@@ -21,8 +21,8 @@ Multi-environment AKS infrastructure with Azure DevOps self-hosted agents powere
 │  │  ├─ System Node Pool (AzureLinux, zones 1-2-3)   │   │
 │  │  ├─ App Node Pool    (AzureLinux, zones 1-2-3)   │   │
 │  │  └─ Agents Node Pool (tainted, scale-to-zero)    │   │
-│  │                                                   │   │
-│  │  Features:                                        │   │
+│  │                                                  │   │
+│  │  Features:                                       │   │
 │  │  ├─ OIDC Issuer + Workload Identity              │   │
 │  │  ├─ KEDA (workload autoscaler)                   │   │
 │  │  ├─ Azure CNI + Network Policy                   │   │
@@ -30,14 +30,14 @@ Multi-environment AKS infrastructure with Azure DevOps self-hosted agents powere
 │  └──────────────────────────────────────────────────┘   │
 │                                                         │
 │  ┌──────────────────────────────────────────────────┐   │
-│  │  Workload Identity                                │   │
-│  │  └─ Managed Identity → Federated Credential       │   │
-│  │     (bound to K8s SA in ado-agents namespace)     │   │
+│  │  Workload Identity                               │   │
+│  │  └─ Managed Identity → Federated Credential      │   │
+│  │     (bound to K8s SA in ado-agents namespace)    │   │
 │  └──────────────────────────────────────────────────┘   │
 │                                                         │
 │  ┌──────────────────────────────────────────────────┐   │
-│  │  ADO Agents (Kubernetes resources)                │   │
-│  │  ├─ Namespace + ServiceAccount                    │   │
+│  │  ADO Agents (Kubernetes resources)               │   │
+│  │  ├─ Namespace + ServiceAccount                   │   │
 │  │  ├─ KEDA TriggerAuthentication (PAT)             │   │
 │  │  └─ KEDA ScaledJob (azure-pipelines trigger)     │   │
 │  │     → Scales 0→N based on ADO queue depth        │   │
