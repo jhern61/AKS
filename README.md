@@ -2,6 +2,12 @@
 
 Multi-environment AKS infrastructure with Azure DevOps self-hosted agents powered by KEDA and workload identity.
 
+**At a glance:**
+- **Environments**: dev, UAT, prod — each with its own tfvars and state backend
+- **Compute**: AKS with system/app/agent node pools, workload identity, OIDC
+- **CI agents**: Self-hosted Azure DevOps agents, scale-to-zero via KEDA
+- **Multi-tenant**: Onboard apps to the shared cluster via `app_workloads`
+
 ## Architecture
 
 ```
